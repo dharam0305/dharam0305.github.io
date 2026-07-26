@@ -12,13 +12,13 @@
 
     <style>
         :root {
-            /* NEW PREMIUM SLATE THEME */
-            --bg-color: #0f172a; /* Deep Slate / Midnight Charcoal */
-            --card-bg: rgba(30, 41, 59, 0.7); /* Lighter Slate for cards */
+            /* Premium Slate Theme */
+            --bg-color: #0f172a; 
+            --card-bg: rgba(30, 41, 59, 0.7);
             --card-border: rgba(148, 163, 184, 0.15);
-            --primary: #38bdf8; /* Bright Sky Blue */
-            --primary-accent: #2563eb; /* Royal Blue */
-            --purple-accent: #818cf8; /* Soft Indigo */
+            --primary: #38bdf8; 
+            --primary-accent: #2563eb; 
+            --purple-accent: #818cf8; 
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --glow: 0 0 20px rgba(56, 189, 248, 0.2);
@@ -91,6 +91,7 @@
             border: 1px solid rgba(56, 189, 248, 0.3);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            white-space: nowrap; /* Forces logo to stay on one line */
         }
         .logo:hover {
             border-color: var(--primary);
@@ -99,6 +100,8 @@
         }
         .logo i { color: var(--primary); font-size: 1.1rem; }
         .logo span.bracket { color: var(--purple-accent); font-weight: 500; }
+        
+        .logo-text { white-space: nowrap; display: inline-block; }
 
         .nav-links a {
             color: var(--text-muted);
@@ -218,7 +221,7 @@
         .image-decoration h4 { color: var(--primary); font-size: 1.5rem; }
         .image-decoration p { font-size: 0.85rem; color: var(--text-muted); margin: 0; font-weight: 600; }
 
-        /* Trusted By Banner (Google Favicon API Fix) */
+        /* Trusted By Banner (Using Wikipedia SVGs for 100% Reliability) */
         .trusted-banner {
             border-top: 1px solid var(--card-border);
             border-bottom: 1px solid var(--card-border);
@@ -238,24 +241,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 3rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
         }
         .api-logo {
-            width: 45px;
             height: 45px;
+            width: auto;
+            max-width: 140px; /* Allows horizontal logos to stretch properly */
             background: #ffffff;
-            border-radius: 10px;
-            padding: 8px;
+            border-radius: 8px;
+            padding: 8px 12px;
             object-fit: contain;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            opacity: 0.8;
+            opacity: 0.85;
             transition: all 0.3s ease;
             cursor: pointer;
         }
         .api-logo:hover {
             opacity: 1;
-            transform: scale(1.15) translateY(-3px);
+            transform: scale(1.1) translateY(-3px);
             box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
             border: 2px solid var(--primary);
         }
@@ -325,6 +329,18 @@
         .timeline-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 1rem;}
         .timeline-company { display: flex; align-items: center; gap: 1rem; }
         
+        /* Adjusted specifically for horizontal timeline logos */
+        .company-badge {
+            height: 40px; 
+            width: auto; 
+            max-width: 120px;
+            border-radius: 6px; 
+            background: #fff;
+            padding: 5px 10px; 
+            object-fit: contain; 
+            border: 1px solid var(--card-border);
+        }
+
         .timeline-title { font-size: 1.25rem; font-weight: 700; color: #fff; }
         .timeline-date { color: var(--primary); font-size: 0.95rem; font-weight: 600; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 6px;}
         .timeline-role { color: var(--text-muted); font-size: 1rem; margin-top: 0.5rem; }
@@ -376,9 +392,10 @@
     <!-- Navigation -->
     <nav>
         <div class="container nav-container">
-            <!-- Creative Code-Style Logo -->
+            <!-- Creative Code-Style Logo - Now wrapped to prevent line break -->
             <a href="#" class="logo">
-                <i class="fa-solid fa-code"></i> DN<span class="bracket">{</span>data<span class="bracket">}</span>
+                <i class="fa-solid fa-code"></i>
+                <span class="logo-text">DN<span class="bracket">{</span>data<span class="bracket">}</span></span>
             </a>
             <div class="nav-links">
                 <a href="#about">About</a>
@@ -414,19 +431,20 @@
         </div>
     </header>
 
-    <!-- Trusted By / IT Giants (Using Reliable Google Favicon API) -->
+    <!-- Trusted By / IT Giants -->
     <div class="trusted-banner">
         <div class="container">
             <p>Delivering Architectural Excellence For Global IT Giants</p>
             <div class="company-logos">
-                <img src="https://www.google.com/s2/favicons?sz=128&domain=tcs.com" class="api-logo" alt="TCS" title="TCS">
-                <img src="https://www.google.com/s2/favicons?sz=128&domain=wipro.com" class="api-logo" alt="Wipro" title="Wipro">
-                <img src="https://www.google.com/s2/favicons?sz=128&domain=ibm.com" class="api-logo" alt="IBM" title="IBM">
-                <img src="https://www.google.com/s2/favicons?sz=128&domain=genpact.com" class="api-logo" alt="Genpact" title="Genpact">
-                <img src="https://www.google.com/s2/favicons?sz=128&domain=hp.com" class="api-logo" alt="HP" title="HP">
-                <img src="https://www.google.com/s2/favicons?sz=128&domain=xerox.com" class="api-logo" alt="Xerox" title="Xerox">
-                <img src="https://www.google.com/s2/favicons?sz=128&domain=nestle.com" class="api-logo" alt="Nestle" title="Nestle">
-                <img src="https://www.google.com/s2/favicons?sz=128&domain=aircanada.com" class="api-logo" alt="Air Canada" title="Air Canada">
+                <!-- Using Official Wikipedia Foundation SVGs (Guaranteed to load) -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg" class="api-logo" alt="TCS" title="TCS">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg" class="api-logo" alt="Wipro" title="Wipro">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="api-logo" alt="IBM" title="IBM">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Genpact_logo.svg" class="api-logo" alt="Genpact" title="Genpact">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" class="api-logo" alt="HP" title="HP">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Xerox_logo.svg" class="api-logo" alt="Xerox" title="Xerox">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Nestl%C3%A9_textlogo.svg" class="api-logo" alt="Nestle" title="Nestle">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Air_Canada_Logo.svg" class="api-logo" alt="Air Canada" title="Air Canada">
             </div>
         </div>
     </div>
@@ -558,7 +576,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-company">
-                                <img src="https://www.google.com/s2/favicons?sz=128&domain=tcs.com" class="api-logo" alt="TCS Logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg" class="company-badge" alt="TCS Logo">
                                 <span class="timeline-title">Tata Consultancy Services (TCS)</span>
                             </div>
                             <span class="timeline-date">2022 – Present</span>
@@ -572,7 +590,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-company">
-                                <img src="https://www.google.com/s2/favicons?sz=128&domain=wipro.com" class="api-logo" alt="Wipro Logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg" class="company-badge" alt="Wipro Logo">
                                 <span class="timeline-title">Wipro Limited</span>
                             </div>
                             <span class="timeline-date">2019 – 2022</span>
@@ -586,7 +604,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-company">
-                                <img src="https://www.google.com/s2/favicons?sz=128&domain=xerox.com" class="api-logo" alt="Xerox Logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Xerox_logo.svg" class="company-badge" alt="Xerox Logo">
                                 <span class="timeline-title">Xerox Corporation</span>
                             </div>
                             <span class="timeline-date">2017 – 2019</span>
@@ -600,7 +618,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-company">
-                                <img src="https://www.google.com/s2/favicons?sz=128&domain=ibm.com" class="api-logo" alt="IBM Logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="company-badge" alt="IBM Logo">
                                 <span class="timeline-title">IBM India Pvt Ltd</span>
                             </div>
                             <span class="timeline-date">2017</span>
@@ -614,7 +632,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-company">
-                                <img src="https://www.google.com/s2/favicons?sz=128&domain=genpact.com" class="api-logo" alt="Genpact Logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Genpact_logo.svg" class="company-badge" alt="Genpact Logo">
                                 <span class="timeline-title">Genpact Headstrong Capital Markets</span>
                             </div>
                             <span class="timeline-date">2015 – 2017</span>
@@ -628,7 +646,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-company">
-                                <img src="https://www.google.com/s2/favicons?sz=128&domain=hp.com" class="api-logo" alt="HP Logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" class="company-badge" alt="HP Logo">
                                 <span class="timeline-title">Hewlett Packard Pvt Ltd (HP)</span>
                             </div>
                             <span class="timeline-date">2012 – 2015</span>
